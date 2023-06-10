@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Quiz BYU-I Society of Cybersecurity- Start</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/game.css" />
+    <link rel="shortcut icon" type="image/png" href="images/quiz.png"/>
+  </head>
+  <body>
+    <header>
+      <div id="select-container" class="col2 box"><h3 class="center highlight">Version 2.1</h3>
+        <div class="select-game">
+          <form action="POST" action="game.html">
+            <!-- <button id="start_btn" class="box">Start</button> -->
+            <select class="box" name="gameChoice" id="gameChoice" onChange="selectGame()">
+              <option selected value="default">What do you want to play?</option>
+              <option value="cyberSecurity.json">Cybersecurity Concepts</option>
+              <!-- <option value="cyberEasy.json">Cybersecurity-Easy</option>
+              <option value="cyberMed.json">Cybersecurity-Medium</option>
+              <option value="cyberHard.json">Cybersecurity-Hard</option> -->
+              
+              <option value="https://opentdb.com/api.php?amount=30&category=9&difficulty=easy">TRIVIA-EASY</option>
+              <option value="https://opentdb.com/api.php?amount=30&category=9&difficulty=medium">TRIVIA-MEDIUM</option>
+              <option value="https://opentdb.com/api.php?amount=30&category=9&difficulty=hard">TRIVIA-HARD</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <div id="hud" class="box col3">
+        <div class="hud-item box">
+          <p id="progressText" class="hud-prefix">              
+          </p>
+          <div id="progressBar" class="box">
+            <div id="progressBarFull" class=""></div>
+          </div>
+        </div>
+        <div id="bonus-text" class="box">See your bonus info here!</div>
+        <div class="hud-item box">
+          <p class="hud-prefix">
+            SCORE
+          </p>
+          <h2 class="hud-main-text" id="score">
+            0
+          </h1>
+        </div>
+      </div>
+    </header>
+    <main class="col3">
+      <div id="loader"></div>
+      <div id="question" class="question box"><h1>Please select a quiz from the dropdown list.</h1></div>
+      <div id="game" class="justify-center nobox hidden">
+            <div class="col1">       
+              <div class="center">
+                <div></div>
+                <button id="next-button" type="button" class="btn hidden" onclick="getNewQuestion()">Next</button>
+              </div>  
+              <div id="box1" class="choice-container box">
+                <p class="choice-text" data-number="1"></p>
+              </div>
+              <div id="box2" class="choice-container box">
+                <p class="choice-text" data-number="2"></p>
+              </div>
+              <div id="box3" class="choice-container box">
+                <p class="choice-text" data-number="3"></p>
+              </div>
+              <div id="box4" class="choice-container box">
+                <p class="choice-text" data-number="4"></p>
+              </div>
+              <div id="box5" class="choice-container box hidden">
+                <p class="choice-text" data-number="5"></p>
+              </div>
+              <div id="box6" class="choice-container box hidden">
+                <p class="choice-text" data-number="6"></p>
+              </div>
+            </div>
+      </div>                    
+      <div id="">
+        <div id="explanation" class="hidden box"></div>
+      </div>
+    </main>
+    <script src="js/game.js"></script>
+  </body>
+</html>
